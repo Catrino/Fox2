@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8372998364493903355}
   - component: {fileID: 3327852742785851833}
   - component: {fileID: 7891346624424015704}
-  - component: {fileID: 1394637684044680670}
+  - component: {fileID: 6787771230248526068}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3327852742785851833
 SpriteRenderer:
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &1394637684044680670
+--- !u!114 &6787771230248526068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
