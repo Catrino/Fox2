@@ -7,10 +7,10 @@ public class VidaEnemigo : MonoBehaviour
 
     public int vidaTotalEnemigo;
     public int vidaActualEnemigo;
-    public int danoRecibeEnemigo;
+    public int dañoRecibeEnemigo;
     bool enemigoRecuperaVida;
-  
-   
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class VidaEnemigo : MonoBehaviour
         if (vidaTotalEnemigo <= 0) { vidaTotalEnemigo = 10; }
         vidaActualEnemigo = vidaTotalEnemigo;
 
-        if (danoRecibeEnemigo <= 0) { danoRecibeEnemigo = 1; }
+        if (dañoRecibeEnemigo <= 0) { dañoRecibeEnemigo = 1; }
     }
 
     // Update is called once per frame
@@ -31,17 +31,17 @@ public class VidaEnemigo : MonoBehaviour
         }
         else { gameObject.GetComponent<SpriteRenderer>().color = Color.white; }
 
-        if (enemigoRecuperaVida == true)
+       /* if (enemigoRecuperaVida == true)
         {
             StartCoroutine("TiempoRecueracionVida");
-        }
+        }*/
         
 
         if (vidaActualEnemigo <= 0) { Destroy(gameObject); }
     }
 
-    public void EnemigoRecibeGolpe(int danoRecibidoBala) {
-       vidaActualEnemigo = danoRecibidoBala * danoRecibeEnemigo; 
+    public void EnemigoRecibeGolpe(int dañoRecibidoBala) {
+       vidaActualEnemigo = dañoRecibidoBala * dañoRecibeEnemigo; 
     }
 
     IEnumerator TiempoRecueracionVida() {

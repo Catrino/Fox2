@@ -5790,10 +5790,10 @@ MonoBehaviour:
   objectoReferencia: {fileID: 1037876537}
   coordenadasInicial: {x: 0, y: 0, z: 0}
   coordenadasFinal: {x: 0, y: 0, z: 0}
-  velocidadMovimeinto: 2
+  velocidadMovimeinto: 1
   enemigoInerte: 0
   estaEnCoordenadaInicial: 0
-  estaEnCoordenadaFinal: 0
+  estaEnCoordenadaFinal: 1
 --- !u!212 &906396315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5854,7 +5854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906396313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.29, y: -0.25, z: 0}
+  m_LocalPosition: {x: 5.554, y: -0.25, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5911,7 +5911,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5939,9 +5939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07af220e7b61f7e41888c248019c12e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaTotalEnemigo: 100
-  vidaActualEnemigo: 0
-  danoRecibeEnemigo: 0
+  vidaTotalEnemigo: 10
+  vidaActualEnemigo: 10
+  "da\xF1oRecibeEnemigo": 2
 --- !u!1 &959352902
 GameObject:
   m_ObjectHideFlags: 0
@@ -9092,8 +9092,8 @@ GameObject:
   m_Component:
   - component: {fileID: 986052982}
   - component: {fileID: 986052980}
-  - component: {fileID: 986052981}
   - component: {fileID: 986052983}
+  - component: {fileID: 986052981}
   - component: {fileID: 986052985}
   - component: {fileID: 986052984}
   - component: {fileID: 986052986}
@@ -9209,7 +9209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986052979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2, y: -3.73, z: 0}
+  m_LocalPosition: {x: 4.18, y: -0.09, z: 0}
   m_LocalScale: {x: 4.5937448, y: 4.5937448, z: 4.5937448}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9256,6 +9256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaHorizontal: 2
+  giroBala: 0
   fuerzaSalto: 4
   alturaRayo: 3
   capaPiso:
@@ -9295,7 +9296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bala: {fileID: 1495824321432128858, guid: 24b3108dc8e4839449e4f12f76d097e8, type: 3}
-  tiempoVidaBala: 1
+  tiempoVidaBala: 2
 --- !u!1 &988340365
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Bala : MonoBehaviour
 {
     public float velocidadBala;
          GameObject player;
-         int direccion;
+    int direccion;
 
     // Start is called before the first frame update
     void Awake()
