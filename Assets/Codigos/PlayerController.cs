@@ -6,71 +6,100 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-        GameObject player;
-        Rigidbody2D rigidbody2D;
-        bool encontroPlayer;    
-        float horiozontal;    
-    public bool tocaPiso;
-    public float velocidadHorizontal;
-    public float distanciaRayoRojo;
-    public float fuerzaSalto;
+    [Header("Control Personaje")]
+    [Header("Vida Personaje")]
     public int vidaTotal;
-        int vidaActual;    
+    public int vidaActual;
     public TMP_Text textoVidaPlayer;
-    public AudioSource audioSource;
+    private int gemaTotal;
+    private int gemaActual;
+    public TMP_Text textoGemaPlayer;
+
+    public Vector3 posicionInicial;
+
+    [Header("Movimiento Personaje")]
+    float horizontal;
+    public float fuerzaHorizontal;
+    public float fuerzaVertical;
+    Rigidbody2D rigidbody2D;
 
 
+    [Header("Control Rayo")]
+    public float altruaRayo;
     public LayerMask piso;
-    // Start is called before the first frame update    
-    
+    public bool tocandoPiso;
+
+
+
+    // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D= GetComponent<Rigidbody2D>();
-        player=GameObject.Find("Player");
-        if(player==null){
-            Debug.Log("No encontro el objeto player");
-            encontroPlayer=false;
-        }else{
-            Debug.Log("Objecto Player asignado");
-            encontroPlayer=true;
-        }
-        vidaActual= vidaTotal;
-        
+        vidaActual = vidaTotal;
+        gemaTotal = 0;
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-       MovimientoPersonaje();
-        rigidbody2D= player.GetComponent<Rigidbody2D>();
-       
-    }
-       
-    public void MovimientoPersonaje(){
-        horiozontal= Input.GetAxisRaw("Horizontal");
-        if(horiozontal!=0 ){
-            player.transform.position += Vector3.right * horiozontal * velocidadHorizontal* Time.deltaTime;
+        //Movimiento Horizontal del personaje
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal != 0)
+        {
+            transform.position += Vector3.right * horizontal * fuerzaHorizontal * Time.deltaTime;
         }
 
-        Debug.DrawRay(player.transform.position, Vector3.down * distanciaRayoRojo, Color.red, 0.1f );
-        if(Physics2D.Raycast(player.transform.position, Vector2.down,distanciaRayoRojo, piso )){
-            tocaPiso= true;
-            Debug.Log("Hit"); 
-            rigidbody2D.gravityScale=1f; 
-        }else{
-            tocaPiso=false;
-            rigidbody2D.gravityScale=2f;  
+        Debug.DrawRay(transform.position, Vector3.down * altruaRayo, Color.blue, 0.1f);
+        if (Physics2D.Raycast(transform.position, Vector2.down, altruaRayo, piso))
+        {
+            tocandoPiso = true;
+            //Debug.Log("Hit"); 
+            rigidbody2D.gravityScale = 1f;
+        }
+        else
+        {
+            tocandoPiso = false;
+            rigidbody2D.gravityScale = 2f;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow)&& tocaPiso){
-            Debug.Log("Salto");
-            rigidbody2D.velocity= Vector2.up*fuerzaSalto;
-        }     
+        if (Input.GetKeyDown(KeyCode.UpArrow) && tocandoPiso)
+        {
+            //Debug.Log("Salto");
+            rigidbody2D.velocity = Vector2.up * fuerzaVertical;
+        }
+
+        PlayerDead();
+
+
     }
 
-    public void Vida(int vidaPlayer){
-        vidaActual = vidaActual- vidaPlayer;
-        textoVidaPlayer.text= "Vida:"+ vidaActual.ToString();
-        audioSource.Play();
+
+    // Update is called once per frame
+    public void Vida(int vidaRecibe)
+    {
+        vidaActual += vidaRecibe;
+        textoVidaPlayer.text = vidaActual.ToString();
+        Debug.Log("Cambio de vida: " + vidaRecibe);
+
+    }
+
+    // Update is called once per frame
+    public void Gema(int gemaRecibe)
+    {
+        gemaActual += gemaRecibe;
+        textoGemaPlayer.text = "x " + gemaActual.ToString();
+        Debug.Log("Cambio de gemas: " + gemaRecibe);
+
+    }
+
+    public void PlayerDead()
+    {
+        if (vidaActual <= 0)
+        {
+            vidaActual = 100;
+            transform.position = posicionInicial;
+            textoVidaPlayer.text = vidaActual.ToString();
+
+        }
 
     }
 }
