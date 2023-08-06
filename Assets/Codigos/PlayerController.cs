@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         if (vidaActual <= 0)
         {
-            vidaActual = 100;
+            vidaActual = 5;
             transform.position = posicionInicial;
             textoVidaPlayer.text = vidaActual.ToString();
 
