@@ -8239,7 +8239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687762744d37aef4595e11f7ff7158e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 1
+  nextScene: 6
 --- !u!61 &647139535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13649,7 +13649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687762744d37aef4595e11f7ff7158e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 1
+  nextScene: 7
 --- !u!61 &1142158371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13752,7 +13752,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 4aadbdeb8a80c664a8fd117c907b5f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13902,7 +13902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150859935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.489998, y: -3.3693, z: -2}
+  m_LocalPosition: {x: 23.489998, y: -3.3693, z: 0}
   m_LocalScale: {x: 2.3949983, y: 4.871957, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -14031,15 +14031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899926837773530723, guid: 359664be943a0a0488139cdf5fdbeeb0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899926837773530723, guid: 359664be943a0a0488139cdf5fdbeeb0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899926837773530723, guid: 359664be943a0a0488139cdf5fdbeeb0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899926837773530723, guid: 359664be943a0a0488139cdf5fdbeeb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14212,7 +14212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592500095627227157, guid: 9a536464c75fdeb41af5e691cdb95615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.159
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4911666841417089474, guid: 9a536464c75fdeb41af5e691cdb95615, type: 3}
       propertyPath: velocidadMovimeinto

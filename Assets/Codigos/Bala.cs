@@ -14,7 +14,7 @@ public class Bala : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.rotation.y == 0){direccion = 1;}
+        if (player.GetComponent<MovimientoSaltoPlayer>().giroBala == 1){direccion = 1;}
         else{direccion = -1;}
 
 
